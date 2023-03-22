@@ -28,6 +28,21 @@ return new class extends Migration
             $table->time('time_of_travel');
             $table->string('service_director');
             $table->timestamps();
+            // driver_vehicle_requests (shorten table name)
+            //     separate fields control_number to id
+            //     shorten column names (name_of_requesting_party - requesting_name / date_of_travel - travel_date)
+            //     add status field
+            //     add soft deletes ($table->softDeletes())
+            //     remove request and vehicle_requested field
+            //     add new fields
+            //         is_driver - boolean
+            //         is_vehicle - boolean
+            //         is_both - boolean
+            //         is_rosa_bus - boolean
+            //         is_canter - boolean
+            //         is_vios - boolean
+            //         is_hi_ace - boolean
+            //         is_h_100 - boolean
         });
     }
 

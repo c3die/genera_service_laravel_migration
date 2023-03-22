@@ -29,6 +29,15 @@ return new class extends Migration
             $table->integer('number_of_participant_other');
             $table->string('non_pdea_equipment');
             $table->timestamps();
+            // rename fields
+            //     time_of_activity - activity_time
+            //     number_of_participant_pdea - pdea_participants
+            //     number_of_participant_other - other_participants
+            //     service_office - services
+            //     equipment_matertial_needed - matertial_needed
+            //     non_pdea_equipment - non_pdea_material
+            // add soft deletes ($table->softDeletes())
+            // add status field
         });
     }
 

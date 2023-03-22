@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('property_number');
             $table->integer('quantity');
             $table->timestamps();
+            // equipment_request_detail - equipment_request_items (rename table name)
+            //     add foreign key
+            //     add soft deletes ($table->softDeletes())
         });
     }
 
