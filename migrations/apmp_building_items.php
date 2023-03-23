@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('apmp_building_items', function (Blueprint $table) {
          
             $table->id();
-            $table->foreign('apmp_detail_id');
+            $table->foreign('apmp_detail_id')->references('id')->on('apmp_details');
             $table->string('facility');
             $table->string('location');
             $table->date('annual_activities');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('task');
             $table->string('forms');
             $table->string('status');
-           
+            $table->softDeletes();
             $table->timestamps();
                  });
     }
