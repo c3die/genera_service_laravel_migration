@@ -17,15 +17,22 @@ return new class extends Migration
         Schema::create('repair_request_maintenance', function (Blueprint $table) {
          
             $table->id();
-            $table->integer('item_number');
-            $table->date('date_repair');
-            $table->string('description');
-            $table->float('amount');
-            $table->string('in_house');
-            $table->string('outsource');
-            $table->string('remarks/status');
-            $table->foriegn('repair_request_maintenance_id');
+            $table->foriegn('repair_request_id')->references('id')->on('repair_request_maintenance_items');
+            $table->integer('property');
+            $table->date('property_number');
+            $table->string('chassis_number');
+            $table->float('serial_number');
+            $table->string('plate_number');
+            $table->string('engine_number');
+            $table->string('status');
+            
+            $table->softDeletes();
             $table->timestamps();
+
+
+
+            
+           
                  });
     }
 
