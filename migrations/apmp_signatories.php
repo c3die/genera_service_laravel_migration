@@ -17,10 +17,11 @@ return new class extends Migration
         Schema::create('apmp_building_items', function (Blueprint $table) {
          
             $table->id();
-            $table->foreign('apmp_detail_id');
-            $table->foreign('prepared_by');
-            $table->foreign('recommending_approval');
-            $table->foreign('approved_by');       
+            $table->foreign('apmp_detail_id')->references('id')->on('apmp_details');
+            $table->foreign('prepared_by')->references('id')->on('user');
+            $table->foreign('recommending_approval')->references('id')->on('user');
+            $table->foreign('approved_by')->references('id')->on('user');
+            $table->softDeletes();       
             $table->timestamps();
                  });
     }
