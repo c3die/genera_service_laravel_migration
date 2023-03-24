@@ -15,7 +15,8 @@ return new class extends Migration
     {
          Schema::create('equipment_request_signatories', function (Blueprint $table) {
             $table->id();
-            $table->foreign('name');
+            $table->string('name')
+            $table->foreign('name')->references('id')->on('equipment_request_details');
             $table->softDeletes();
             $table->timestamps();
             
