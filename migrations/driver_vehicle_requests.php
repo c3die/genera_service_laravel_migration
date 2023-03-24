@@ -36,6 +36,12 @@ return new class extends Migration
             $table->string('service_director');
             $table->string('status');
             $table->softDeletes();
+            $table->timestamps();
+
+
+
+
+
             //done
             // driver_vehicle_requests (shorten table name)
             //     separate fields control_number to id
