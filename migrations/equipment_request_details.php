@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('mobile_number');
             $table->string('purpose');
             $table->date('activity_date');
-            $table->string('status');
+            $table->time('activity_time');
             $table->string('status');
             $table->softDeletes();
             $table->timestamps();
