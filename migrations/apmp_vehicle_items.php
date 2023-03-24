@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('apmp_vehicle_items', function (Blueprint $table) {
          
             $table->id();
-            $table->foreign('apmp_detail_id');
+            $table->foreign('apmp_detail_id')->references('id')->on('apmp_details');
             $table->string('type');
             $table->string('make');
             $table->string('plate_number');
@@ -26,11 +26,12 @@ return new class extends Migration
             $table->string('service_unit');
             $table->string('task');
             $table->string('forms');
-            $table->string('status/remarks');
+            $table->string('status');
             $table->date('jan_to_jun');
             $table->date('jul_to_dec');
             $table->integer('odometer');
             $table->date('activitiy_date');
+            $table->softDeletes();
             $table->timestamps();
                  });
     }
