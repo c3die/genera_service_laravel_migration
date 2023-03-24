@@ -17,10 +17,11 @@ return new class extends Migration
         Schema::create('repair_request_signatories', function (Blueprint $table) {
          
             $table->id();
-            $table->foreign('repair_request_id');
-            $table->foreign('prepared_by');
-            $table->foreign('supervised_by');
-            $table->foreign('recommending_approval');
+            $table->foreign('repair_request_id')->references('id')->on('repair_requests');
+            $table->foreign('prepared_by')->references('id')->on('user');
+            $table->foreign('supervised_by')->references('id')->on('user');
+            $table->foreign('recommending_approval')->references('id')->on('user');
+            $table->softDeletes();
             $table->timestamps();
                  });
     }
