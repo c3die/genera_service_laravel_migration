@@ -17,8 +17,8 @@ return new class extends Migration
         Schema::create('apmp_details', function (Blueprint $table) {
                 $table->id();
                 $table->string('transaction_number');
-                $table->date('year');
-                $table->string('type');  
+                $table->date('years');
+                $table->string('types');  
                 $table->string('status');  
                 $table->softDelete(); 
                 $table->timestamps();

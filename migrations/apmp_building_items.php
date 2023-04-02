@@ -17,14 +17,13 @@ return new class extends Migration
         Schema::create('apmp_building_items', function (Blueprint $table) {
          
             $table->id();
-            $table->foreign('apmp_detail_id')->references('id')->on('apmp_details');
-            $table->string('facility');
+            $table->foreign('apmp_details_id')->references('id')->on('apmp_details');
+            $table->string('facilities');
             $table->string('location');
             $table->date('annual_activities');
             $table->date('semi_annual_activities');
             $table->string('task');
-            $table->string('service_unit');
-            $table->string('task');
+            $table->string('service_units');
             $table->string('forms');
             $table->string('status');
             $table->softDeletes();

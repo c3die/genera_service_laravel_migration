@@ -16,7 +16,7 @@ return new class extends Migration
         //
         Schema::create('building_facilities_request', function (Blueprint $table) {
             $table->id();
-            $table->string('requesting_party');  
+            $table->string('requesting_parties');  
             $table->date('date_requested');
             $table->time('time_requested');
             $table->string('requested_facilities');

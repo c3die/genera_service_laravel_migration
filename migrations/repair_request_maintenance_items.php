@@ -18,7 +18,7 @@ return new class extends Migration
          
             $table->id();
             $table->foriegn('repair_request_maintenance_id')->references('id')->on('repair_request_maintenance');
-            $table->integer('item_number');
+            $table->integer('items_number');
             $table->date('date_repair');
             $table->string('description');
             $table->float('amount');

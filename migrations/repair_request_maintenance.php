@@ -14,12 +14,12 @@ return new class extends Migration
     public function up()
     {
         //
-        Schema::create('repair_request_maintenance', function (Blueprint $table) {
+        Schema::create('repair_request_maintenances', function (Blueprint $table) {
          
             $table->id();
             $table->foriegn('repair_request_id')->references('id')->on('repair_request_maintenance_items');
-            $table->integer('property');
-            $table->date('property_number');
+            $table->integer('properties');
+            $table->date('properties_number');
             $table->string('chassis_number');
             $table->float('serial_number');
             $table->string('plate_number');

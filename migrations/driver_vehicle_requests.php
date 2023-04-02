@@ -16,21 +16,21 @@ return new class extends Migration
         //
         Schema::create('driver_vehicle_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('control_number');
-            $table->boolen('is_driver');
-            $table->boolen('is_vehicle');
+            $table->string('control_numbers');
+            $table->boolen('is_drivers');
+            $table->boolen('is_vehicles');
             $table->boolen('is_both');
             $table->string('requesting_name');  
             $table->string('contact_number');
             $table->date('date_requested');
-            $table->string('purpose');
-            $table->string('destination');
+            $table->string('purposes');
+            $table->string('destinations');
             $table->boolen('is_rosa_bus');
             $table->boolen('is_canter');
             $table->boolen('is_vios');
             $table->boolen('is_hi_ace');
             $table->boolen('is_h_100');
-            $table->integer('number_of_passenger');
+            $table->integer('number_of_passengers');
             $table->date('travel_date');
             $table->time('travel_time');
             $table->string('service_director');

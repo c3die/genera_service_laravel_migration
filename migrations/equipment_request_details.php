@@ -16,15 +16,15 @@ return new class extends Migration
         //
         Schema::create('equipment_request_details', function (Blueprint $table) {
             $table->id();
-            $table->string('requesting_party');  
+            $table->string('requesting_parties');  
             $table->date('date_requested');
             $table->time('time_requested');
             $table->string('services');
             $table->string('landline_number');
             $table->string('mobile_number');
-            $table->string('purpose');
-            $table->date('activity_date');
-            $table->time('activity_time');
+            $table->string('purposes');
+            $table->date('activities_date');
+            $table->time('activities_time');
             $table->string('status');
             $table->softDeletes();
             $table->timestamps();
